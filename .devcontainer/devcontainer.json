@@ -1,7 +1,7 @@
 {
     "name": "Python 3 & Jupyter",
     "image": "mcr.microsoft.com/vscode/devcontainers/python:3",
-    "postCreateCommand": "pip install jupyterlab",
+    "postCreateCommand": "pip install --no-cache-dir jupyterlab pandas matplotlib opencv-python timm",
     "forwardPorts": [8888],
     "remoteUser": "vscode",
     "extensions": [
