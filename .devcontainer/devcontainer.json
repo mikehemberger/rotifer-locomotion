@@ -1,0 +1,11 @@
+{
+    "name": "Python 3 & Jupyter",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3",
+    "postCreateCommand": "pip install jupyterlab",
+    "forwardPorts": [8888],
+    "remoteUser": "vscode",
+    "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+    ]
+}
