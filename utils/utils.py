@@ -7,6 +7,17 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 
+def argnotnan(arr):
+    non_nan_indices = np.where(~np.isnan(arr))[0]
+    non_nan_values = arr[non_nan_indices]
+    return non_nan_values
+
+
+def set_spines_visible(ax=None, color="k", ls="-"):
+    for spine in ax.spines.values():
+        spine.set_visible(True)
+        spine.set_color(color)
+        spine.set_linestyle(ls)
 
 def generate_video_with_text(vid_params, img_fp, text_params, bbox=None):
     """ Generate a video with bbox cut-out if provided """
@@ -53,14 +64,15 @@ def plot_scalebar(ax, mpp, width_microns, position=(10, 10), color="k", linewidt
     ax.add_line(scalebar)
     
     # Add text label for the scalebar
-    ax.text(
-        position[0], position[1] - 10, 
-        f'{width_microns} µm', 
-        color=color, 
-        verticalalignment='top', 
-        horizontalalignment='left',
-        fontsize=fontsize
-    )
+    if fontsize:
+        ax.text(
+            position[0], position[1] - 10, 
+            f'{width_microns} µm', 
+            color=color, 
+            verticalalignment='top', 
+            horizontalalignment='left',
+            fontsize=fontsize
+        )
     
 
 def create_scalarmappable(colormap, data, vminmax=None):
