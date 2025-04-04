@@ -3,6 +3,5 @@ __pycache__
 .DS_store
 .devcontainer/
 notebooks/
-*.ipynb
 .history/
 old/
