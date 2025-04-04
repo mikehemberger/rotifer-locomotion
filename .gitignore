@@ -5,3 +5,4 @@ __pycache__
 notebooks/
 *.ipynb
 .history/
+old/
